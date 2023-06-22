@@ -8,6 +8,7 @@
 #include "output.h"
 #include "utils.h"
 
+#ifdef DEBUG
 int callbackMockFunc(char* buf, int i) {
 	return 1;
 }
@@ -78,7 +79,7 @@ int Testing() {
 
 	return success(output);
 }
-
+#endif
 int Execute(char* argsBuffer, uint32_t bufferSize, goCallback callback)
 {
 	// global variable to hold all output returned to Sliver
