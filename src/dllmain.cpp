@@ -10,7 +10,8 @@
 
 #ifdef DEBUG
 int callbackMockFunc(char* buf, int i) {
-	return 1;
+	printf("%s\n", buf);
+	return 0;
 }
 
 goCallback callback = callbackMockFunc;
@@ -18,7 +19,7 @@ goCallback callback = callbackMockFunc;
 int Testing() {
 	// global variable to hold all output returned to Sliver
 	
-	const char* argsBuffer = "127.0.0.1 whoami contoso.local\\Administrator Password123!";
+	const char* argsBuffer = "dc.snaplabs.local whoami snaplabs.local\\domain_admin P@ssw0rd1";
 	int bufferSize = strlen(argsBuffer);
 	output = NewOutput(2049, callback);
 
